@@ -1,7 +1,9 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import * as Google from 'expo-google-app-auth';
+
+import * as Test from './modules/testfunc.js';
 
 const tempstr = "empty"
 
@@ -18,7 +20,7 @@ async function googleSignIn() {
     // let userInfoResponse = await fetch('https://www.googleapis.com/userinfo/v2/me', {
     //   headers: { Authorization: `Bearer ${accessToken}` },
     // });
-
+    Test.testFunc();
     alert("success!");
     return;
   }
