@@ -7,6 +7,7 @@ export const googleSignIn = async () => {
 
   const { type, accessToken, user } = await Google.logInAsync({
     androidClientId: '1028854562585-mmqdqdtqrit6e8e0a01sro57tkd9mob8.apps.googleusercontent.com',
+    iosClientId: '1028854562585-9pmab1onorsna0i3ariuuab2pmoaakaq.apps.googleusercontent.com',
     scopes: ['profile', 'email'],
   });
 
