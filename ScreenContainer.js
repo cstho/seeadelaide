@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import * as React from 'react';
 import styles from './modules/loginScreen.style';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import LoginScreen from './modules/loginScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
@@ -15,9 +15,7 @@ export function Feed() {
 
 export function Profile() {
   return (
-    <View style={styles.container}>
-      <Text>Profile</Text>
-    </View>
+    <LoginScreen />
   );
 }
 
