@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
 import * as Google from 'expo-google-app-auth';
-import styles from './loginScreen.style.js';
-import * as Test from './testfunc.js';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 // First- obtain access token from Expo's Google API
 
