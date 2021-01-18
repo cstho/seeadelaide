@@ -1,21 +1,17 @@
-import { Text, View } from 'react-native';
+import { Text, View, SafeAreaView} from 'react-native';
 import * as React from 'react';
-import styles from './modules/loginScreen.style';
-import LoginScreen from './modules/loginScreen';
+import styles from './src/styles/loginScreen.style';
+import LoginScreen from './src/screens/LoginScreen';
+import { Home } from './src/screens/Home';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import Icon from 'react-native-ionicons';
 
-export function Feed() {
+export function Saved() {
   return (
-    <View style={styles.container}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-export function Profile() {
-  return (
-    <LoginScreen />
+    <SafeAreaView style={styles.container}>
+      <Text>Saved Section!</Text>
+    </SafeAreaView>
   );
 }
 
@@ -27,23 +23,39 @@ export function Notifications() {
   );
 }
 
+export function Profile() {
+  return (
+    <LoginScreen />
+  );
+}
+
 const Tab = createMaterialBottomTabNavigator();
 
 export function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
-      activeColor="#f0edf6"
-      inactiveColor="#FFC107"
-      barStyle={{ backgroundColor: '#0745ff' }}
+      initialRouteName="Home"
+      activeColor="#3E1B72"
+      inactiveColor="#b0acb0"
+      barStyle={{ backgroundColor: 'white', borderRadius: 100 }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Feed}
+        name="Home"
+        component={Home}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Saved"
+        component={Saved}
+        options={{
+          tabBarLabel: 'Saved',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="heart" color={color} size={26} />
           ),
         }}
       />
