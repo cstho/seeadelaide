@@ -1,19 +1,11 @@
 import { Text, View, SafeAreaView} from 'react-native';
 import * as React from 'react';
-import styles from './src/styles/loginScreen.style';
+import styles from './src/styles/screens.style';
 import LoginScreen from './src/screens/LoginScreen';
-import { Home } from './src/screens/Home';
+import HomeNav from './src/navigations/HomeNav';
+import { Saved } from './src/screens/Saved';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import Icon from 'react-native-ionicons';
-
-export function Saved() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text>Saved Section!</Text>
-    </SafeAreaView>
-  );
-}
 
 export function Notifications() {
   return (
@@ -34,14 +26,14 @@ const Tab = createMaterialBottomTabNavigator();
 export function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
-      activeColor="#3E1B72"
+      initialRouteName="HomeNav"
+      activeColor="black"
       inactiveColor="#b0acb0"
       barStyle={{ backgroundColor: 'white', borderRadius: 100 }}
     >
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeNav"
+        component={HomeNav}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (

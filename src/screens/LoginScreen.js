@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
-import styles from '../styles/loginScreen.style.js'
+import styles from '../styles/screens.style.js';
 import * as SignIn from '../components/GoogleSignIn.js';
 
 export default class LoginScreen extends React.Component{

@@ -35,8 +35,18 @@ export const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 20
     },
+    cardImageStyle: {
+      width: 80, 
+      height: 80, 
+      backgroundColor: 'white', 
+      borderRadius: 40, 
+      alignItems: 'center', 
+      justifyContent: 'center'
+    },
     childViewTextStyle: {
+      margin: 10,
+      alignItems: 'center',
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'space-evenly',
     },
   });
