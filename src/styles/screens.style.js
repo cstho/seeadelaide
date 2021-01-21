@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#EBF2F5',
+      backgroundColor: '#e7e7e7',
       elevation: 0, // This is for Android
       // alignItems: 'center',
       // justifyContent: 'center',
@@ -46,7 +46,7 @@ export default StyleSheet.create({
     },
     searchbar: {
       elevation: 0, // This is for Android
-      backgroundColor: '#EBF2F5',
+      backgroundColor: '#e7e7e7',
       marginTop: 30,
       padding: 10,
       alignSelf: 'center',

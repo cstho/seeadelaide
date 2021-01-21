@@ -7,133 +7,99 @@ import {
   View,
   Image,
   ScrollView,
-  TouchableOpacity
 } from 'react-native';
-import Search from '../components/SearchBar';
 import { styles } from '../styles/category.style';
-import all from '../images/all.png';
-import beach from '../images/beach.png';
-import shopping from '../images/shopping.png';
-import hill from '../images/hills.png';
-import museum from '../images/museum_filled.png';
-import restaurant from '../images/restaurant.png';
-import first from '../images/glenelg.jpg';
-import second from '../images/sa_museum.jpg';
-import third from '../images/burnside_village.jpg';
-import fourth from '../images/mount_lofty.jpg';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Card } from 'react-native-elements';
+import first from '../images/glenelg_1.jpg';
+import second from '../images/glenelg_2.jpg';
+import third from '../images/glenelg_3.jpg';
+import fourth from '../images/glenelg_4.jpeg';
+import StarRating from '../components/StarRating';
+import { Divider } from 'react-native-elements';
+import { SliderBox } from "react-native-image-slider-box";
 
 export const Detail = ({navigation}) => {
-  const categories = [
-    {
-      key: '11 MB',
-      text: 'FREE ',
-      title: 'All',
-      uri: Image.resolveAssetSource(all).uri,
-      backgroundColor: '#4A89FF',
-    },
-    {
-      key: '52 MB',
-      title: 'Beach',
-      uri: Image.resolveAssetSource(beach).uri,
-      backgroundColor: '#febe29',
-    },
-    {
-      key: '14 MB',
-      text: 'FREE',
-      title: 'Shopping',
-      uri: Image.resolveAssetSource(shopping).uri,
-      backgroundColor: '#22bcb5',
-    },
-    {
-      key: '45 MB',
-      title: 'Hill',
-      uri: Image.resolveAssetSource(hill).uri,
-      backgroundColor: '#3395ff',
-    },
-    {
-      key: '33 MB',
-      title: 'Museum',
-      text: 'FREE',
-      uri: Image.resolveAssetSource(museum).uri,
-      backgroundColor: '#f6437b',
-    },
-    {
-      key: '77 MB',
-      title: 'Restaurant',
-      uri: Image.resolveAssetSource(restaurant).uri,
-      backgroundColor: '#febe29',
-    },
-  ];
-
   const rec_list = [
     {
-      key: '11 MB',
-      text: 'FREE ',
-      title: 'Glenelg',
+      Title: 'Glenelg',
+      Summary: 'Situated 20 minutes west of the city and accessible by tram. Glenelg offers a range of exciting activities, such as beach volleyball, swimming, walking trails, bike hire, reserves and many other fun activities',
+      MainAttraction: 'Jetty Road - a large shopping precinct',
+      Cost: ' Entry to Glenelg is free at all times',
+      Travel: 'The Map module goes here',
       uri: Image.resolveAssetSource(first).uri,
     },
-    {
-      key: '52 MB',
-      title: 'SA Museum',
-      text: 'FREE ',
-      uri: Image.resolveAssetSource(second).uri,
-    },
-    {
-      key: '14 MB',
-      text: 'FREE',
-      title: 'Burnside Village',
-      uri: Image.resolveAssetSource(third).uri,
-    },
-    {
-      key: '45 MB',
-      title: 'Mount Lofty',
-      text: 'FREE ',
-      uri: Image.resolveAssetSource(fourth).uri,
-    },
+  ];
+  const images = [
+    require('../images/glenelg_1.jpg'),
+    require('../images/glenelg_2.jpg'),
+    require('../images/glenelg_3.jpg'),
+    require('../images/glenelg_4.jpeg'),
   ];
   return (
-    <SafeAreaView style={styles.container}>
-        <Card containerStyle={styles.cardStyle}>
+    <SafeAreaView style={styles.detailMain}>
+      <View style = {{backgroundColor: 'white'}}>
+          <SliderBox images={images}/>
+            <ScrollView
+              horizontal={false}
+              showsHorizontalScrollIndicator={false}>
+                <View style={{ backgroundColor: 'white' }}>
+                  <View style = {styles.DetailStyle}>
+                    <Text style = {{marginTop:5, marginBottom:5, fontWeight: 'bold',fontSize: 30}}>
+                      {rec_list[0].Title}
+                    </Text>
+                    <StarRating />
+                  </View>
+                  <Divider style={{ marginTop:5, marginBottom:10, backgroundColor: 'gray' }} />
+                </View>
+            </ScrollView>
           <View style={{ flexDirection: 'row', width: '100%' }}>
             <ScrollView
               horizontal={false}
               showsHorizontalScrollIndicator={false}>
-              {rec_list.map((item) => (
                 <View style={{ margin: 5, backgroundColor: 'white', borderRadius: 20 }}>
-                  <TouchableOpacity  onPress={() => navigation.navigate('Detail')}>
-                  <Image
-                    source={{ uri: item.uri }}
-                    style={{ width: '100%', height: 140, borderRadius: 20 }} />
-                  </TouchableOpacity>
+                <View style={styles.cardHeadingStyle}>
+                  <Text style={styles.cardHeadingTextStyle}>
+                                  Summary
+                  </Text>
+                </View>
                   <View style={styles.childViewTextStyle}>
-                    <Text
-                      style={{
-                        color: '#494949',
-                        fontWeight: '200',
-                      }}
-                      onPress={() => {
-                        alert('Title ' + item.title + ' Clicked');
-                      } }>
-                      {item.title}
+                    <Text>
+                      {rec_list[0].Summary}
                     </Text>
-                    <MaterialCommunityIcons name="star-circle" color={'black'} size={26} />
-                    <Text
-                      style={{
-                        color: '#606070',
-                        fontWeight: '200',
-                      }}>
-                      {item.key}
+                  </View>
+                  <View style={styles.cardHeadingStyle}>
+                  <Text style={styles.cardHeadingTextStyle}>
+                                  Main Attractions
+                  </Text>
+                </View>
+                  <View style={styles.childViewTextStyle}>
+                    <Text>
+                      {rec_list[0].MainAttraction}
                     </Text>
-                    <Text style={{ color: '#228B22' }}>
-                      {item.text}</Text>
+                  </View>
+                  <View style={styles.cardHeadingStyle}>
+                  <Text style={styles.cardHeadingTextStyle}>
+                                  Cost
+                  </Text>
+                </View>
+                  <View style={styles.childViewTextStyle}>
+                    <Text>
+                      {rec_list[0].Cost}
+                    </Text>
+                  </View>
+                  <View style={styles.cardHeadingStyle}>
+                  <Text style={styles.cardHeadingTextStyle}>
+                                  Travel
+                  </Text>
+                </View>
+                  <View style={styles.childViewTextStyle}>
+                    <Text>
+                      {rec_list[0].Travel}
+                    </Text>
                   </View>
                 </View>
-              ))}
             </ScrollView>
           </View>
-        </Card>
+      </View>
     </SafeAreaView>
   );
 }

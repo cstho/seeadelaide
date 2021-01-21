@@ -36,8 +36,6 @@ export default class LoginScreen extends React.Component{
           <TouchableOpacity>
               <Text style={styles.loginText}>Signup</Text>
           </TouchableOpacity>
-
-
       </View>
       );
   };

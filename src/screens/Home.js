@@ -17,7 +17,7 @@ import shopping from '../images/shopping.png';
 import hill from '../images/hills.png';
 import museum from '../images/museum_filled.png';
 import restaurant from '../images/restaurant.png';
-import first from '../images/glenelg.jpg';
+import first from '../images/glenelg_1.jpg';
 import second from '../images/sa_museum.jpg';
 import third from '../images/burnside_village.jpg';
 import fourth from '../images/mount_lofty.jpg';
@@ -110,7 +110,6 @@ export function Home({ navigation }) {
               {categories.map((item) => (
                 <View style={{ margin: 5 }}>
                   <View style={styles.cardImageStyle}>
-
                     <Image
                       source={{ uri: item.uri }}
                       style={{ width: 40, height: 40, margin: 10 }} />
@@ -130,8 +129,6 @@ export function Home({ navigation }) {
                       } }>
                       {item.title}
                     </Text>
-                  </View>
-                  <View style={styles.childViewTextStyle}>
                   </View>
                 </View>
               ))}
