@@ -95,7 +95,7 @@ export function Home({ navigation }) {
   ];
   return (
     <SafeAreaView style={styles.container}>
-      <Search />
+        <Search />
       <ScrollView>
         <Card containerStyle={styles.cardStyle}>
           <View style={styles.cardHeadingStyle}>
@@ -145,10 +145,11 @@ export function Home({ navigation }) {
             <ScrollView
               horizontal={false}
               showsHorizontalScrollIndicator={false}>
-              {rec_list.map((item) => (
+              {rec_list.map((item, key) => (
                 <View style={{ margin: 5, backgroundColor: 'white', borderRadius: 20 }}>
-                  <TouchableOpacity  onPress={() => navigation.navigate('Detail')}>
+                  <TouchableOpacity  onPress={() => navigation.navigate('DestinationDetail')}>
                   <Image
+                    key={key}
                     source={{ uri: item.uri }}
                     style={{ width: '100%', height: 140, borderRadius: 20 }} />
                   </TouchableOpacity>

@@ -16,6 +16,7 @@ import fourth from '../images/glenelg_4.jpeg';
 import StarRating from '../components/StarRating';
 import { Divider } from 'react-native-elements';
 import { SliderBox } from "react-native-image-slider-box";
+import Map from '../components/Map'
 
 export const Detail = ({navigation}) => {
   const rec_list = [
@@ -95,6 +96,7 @@ export const Detail = ({navigation}) => {
                     <Text>
                       {rec_list[0].Travel}
                     </Text>
+                    <Map />
                   </View>
                 </View>
             </ScrollView>

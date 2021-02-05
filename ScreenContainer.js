@@ -4,7 +4,7 @@ import styles from './src/styles/screens.style';
 import LoginScreen from './src/screens/LoginScreen';
 import HomeNav from './src/navigations/HomeNav';
 import { Saved } from './src/screens/Saved';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 export function Notifications() {
@@ -29,7 +29,7 @@ export function MyTabs() {
       initialRouteName="HomeNav"
       activeColor="black"
       inactiveColor="#b0acb0"
-      barStyle={{ backgroundColor: 'white', borderRadius: 100 }}
+      barStyle={{ backgroundColor: 'white'}}
     >
       <Tab.Screen
         name="HomeNav"

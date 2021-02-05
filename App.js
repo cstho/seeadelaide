@@ -1,33 +1,50 @@
 import * as functions from './ScreenContainer';
 import 'react-native-gesture-handler';
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { AppLoading } from 'expo-app-loading';
-import * as Font from 'expo-font';
-import { Ionicons } from '@expo/vector-icons'; // here, do a call "ionicons" font
+import { Linking, Platform } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isReady: false,
+const PERSISTENCE_KEY = 'NAVIGATION_STATE';
+
+export default function App() {
+  const [isReady, setIsReady] = React.useState(false);
+  const [initialState, setInitialState] = React.useState();
+
+  React.useEffect( () => {
+    const restoreState = async () => {
+      try {
+        const initialUrl = await Linking.getInitialURL();
+
+        if (Platform.OS !== 'web' && initialUrl == null) {
+          // Only restore state if there's no deep link and we're not on web
+          const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
+          const state = savedStateString ? JSON.parse(savedStateString) : undefined;
+
+          if (state !== undefined) {
+            setInitialState(state);
+          }
+        }
+      } finally {
+        setIsReady(true);
+      }
     };
-  }
 
-  async componentDidMount() {
-    await Font.loadAsync({
-      'RobotoBold' : require('./src/fonts/Roboto-Bold.ttf'),
-      'RobotoRegular' : require('./src/fonts/Roboto-Regular.ttf'),
-      ionicons: Ionicons.font['ionicons'] // and here is what changes so that the font loads
-    });
-    this.setState({ isReady: true });
-  }
+    if (!isReady) {
+      restoreState();
+    }
+  }, [isReady]);
 
-  render() {
-    return (
-      <NavigationContainer>
+  if (!isReady) {
+    return null;
+  }
+  return (
+      <NavigationContainer
+      initialState={initialState}
+      onStateChange={(state) =>
+        AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))}
+      >
         <functions.MyTabs />
       </NavigationContainer>
     );
-  }
 }

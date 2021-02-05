@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     container: {
+      paddingTop: 20,
       flex: 1,
       backgroundColor: '#e7e7e7',
       elevation: 0, // This is for Android

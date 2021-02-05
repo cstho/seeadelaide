@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from 'C:/Users/Phuc Nguyen/SeeAdelaide/modules/loginScreen.style';
+import styles from '../styles/loginScreen.style';
 import { SearchBar } from 'react-native-elements'
 
 export default class Search extends React.Component {
