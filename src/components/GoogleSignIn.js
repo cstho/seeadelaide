@@ -23,15 +23,3 @@ export const googleSignIn = async () => {
         return;
       }
     }
-
-  // render() {
-  //   return (
-  //     <View style={styles.inputView}>
-  //       <TouchableOpacity style={styles.loginBtn} onPress={() => this.googleSignIn()}>
-  //         <Text style={styles.loginText}>
-  //             {this.state.logged}
-  //         </Text>
-  //       </TouchableOpacity>
-  //     </View>
-  //   )
-  // }

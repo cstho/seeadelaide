@@ -3,6 +3,7 @@ import * as React from 'react';
 import styles from './src/styles/screens.style';
 import LoginScreen from './src/screens/LoginScreen';
 import HomeNav from './src/navigations/HomeNav';
+import LoginScrNav from './src/navigations/LoginScrNav' ;
 import { Saved } from './src/screens/Saved';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -17,7 +18,7 @@ export function Notifications() {
 
 export function Profile() {
   return (
-    <LoginScreen />
+    <LoginScrNav />
   );
 }
 

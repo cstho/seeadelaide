@@ -2,12 +2,15 @@ import React from 'react';
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import styles from '../styles/screens.style.js';
 import * as SignIn from '../components/GoogleSignIn.js';
+import Register from '../components/Register.js';
+import { useNavigation } from '@react-navigation/native';
 
 export default class LoginScreen extends React.Component{
   state={
     email:"",
     password:""
   }
+  navigation = useNavigation() ;
   render() {
       return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -33,7 +36,7 @@ export default class LoginScreen extends React.Component{
           <TouchableOpacity style={styles.loginBtn} onPress={() => SignIn.googleSignIn()}>
               <Text style={styles.loginText}>LOGIN</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {navigation.navigate('Register')}}>
               <Text style={styles.loginText}>Signup</Text>
           </TouchableOpacity>
       </View>

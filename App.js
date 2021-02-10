@@ -5,6 +5,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Linking, Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+import { Provider } from 'react-redux' ;
+import { createStore, applyMiddleware } from 'redux' ;
+import rootReducer from './src/redux/reducers' ;
+import thunk from 'redux-thunk' ;
+
+const store = createStore(rootReducer, applyMiddleware(thunk))
+
 const PERSISTENCE_KEY = 'NAVIGATION_STATE';
 
 export default function App() {
@@ -39,6 +46,7 @@ export default function App() {
     return null;
   }
   return (
+    <Provider store={store}>
       <NavigationContainer
       initialState={initialState}
       onStateChange={(state) =>
@@ -46,5 +54,6 @@ export default function App() {
       >
         <functions.MyTabs />
       </NavigationContainer>
+    </Provider>
     );
 }
