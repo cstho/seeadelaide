@@ -18,7 +18,7 @@ export function Notifications() {
 
 export function Profile() {
   return (
-    <LoginScrNav />
+    <LoginScreen />
   );
 }
 

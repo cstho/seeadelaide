@@ -3,33 +3,25 @@ import { Platform, Text, View, StyleSheet, Dimensions, Image } from 'react-nativ
 import MapView, {Polyline, Marker, PROVIDER_GOOGLE, Callout} from 'react-native-maps';
 import { images, icons, COLORS, SIZES } from '../constants';
 import * as Location from 'expo-location';
+import { data } from '../constants/data';
 
-export default class Map extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: true,
-      markers: [],
-    };
-  }
-
-  render() {
+const Map = (props) => {
+  console.log(props) ;
     return (
       <View style={styles.container}>
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: -34.921230,
-          longitude: 138.599503,
+          latitude: props.latitude,
+          longitude: props.longitude,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421
         }}
         provider={PROVIDER_GOOGLE}
       />
       <Marker
-        coordinate={{latitude: -34.921230,
-          longitude: 138.599503,}}
+        coordinate={{latitude: props.latitude,
+          longitude: props.longitude}}
         title={"Title?"}
         description={"Description?"}
       >
@@ -45,8 +37,8 @@ export default class Map extends React.Component {
       </View>
     );
   }
-}
 
+export default Map ;
 
 const styles = StyleSheet.create({
   container: {

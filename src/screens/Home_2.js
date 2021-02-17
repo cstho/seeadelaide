@@ -12,7 +12,6 @@ import {
     SharedElement,
     SharedElementTransition,
   } from 'react-native-shared-element';
-import { locationsRef } from '../components/firebaseStorage' ;
 
 
 const { ITEM_WIDTH, ITEM_HEIGHT, RADIUS, SPACING, FULL_SIZE } = homeTheme_2;
@@ -20,43 +19,13 @@ const { ITEM_WIDTH, ITEM_HEIGHT, RADIUS, SPACING, FULL_SIZE } = homeTheme_2;
 function Home_2 ({ navigation, route }) {
     // const { item } = route.params ;
 
-    // const storageRef = firebase.storage().ref("locations/glenelg") ;
-
-    // const storage = [] ;
-
-    // storageRef.listAll().then(async function(result) {
-    //     result.items.forEach(async function(item) {
-    //         const url = await item.getDownloadURL().then((url) => {
-    //             storage.push(url) ;
-    //         }) ;
-    //     })
-    //     return Promise.resolve() ;
-    // })
-    
-    const data1 = fbFetch.listFiles(firebase.storage().ref('locations/glenelg'));
-    setTimeout(() => {  console.log('print '+data1); }, 1000);
-
-    // const [state, setState] = useState(0) ;
-
-    // // function to fetch data from firestore
-    // function fetchDatafromFirebase() {
-    //     return (
-    //         locationsRef.onSnapshot(querySnapShot => {
-    //             let tempArr = [];
-    //             querySnapShot.forEach((doc) => {
-    //                 tempArr.push({
-    //                     id: doc.id,
-    //                     data: doc.data(),
-    //                 });
-    //             });
-    //             setState(tempArr) ;
-    //         })
-    //     ) ;
-    // }
-
-    // const data = fetchDatafromFirebase() ;
-
-    // console.log(data) ;
+    function signOut() {
+        firebase.auth().signOut().then(()=>{
+            console.log("Sign out successfully") ;
+        }).catch((error)=>{
+            console.log(error) ;
+        })
+    }
 
     // function to render the header
     function renderHeader() {
@@ -100,6 +69,7 @@ function Home_2 ({ navigation, route }) {
                         paddingRight: SIZES.padding * 2,
                         justifyContent: 'center'
                     }}
+                    onPress={() => signOut()}
                 >
                     <Image
                         source={icons.menu}
@@ -159,7 +129,7 @@ function Home_2 ({ navigation, route }) {
                                     </SharedElement>
                                 </View>
                                 <SharedElement id={`item.${item.key}.title`}>
-                                    <Animated.Text style={[styles.location, { transform: [{ translateX }] }]}>{item.title}</Animated.Text>
+                                    <Animated.Text numberOfLines={1} style={[styles.location, { transform: [{ translateX }] }]}>{item.title}</Animated.Text>
                                 </SharedElement>
                                 <View style={styles.daysContainer}>
                                     <Text style={styles.TourDaysValue}>{item.TourDays}</Text>

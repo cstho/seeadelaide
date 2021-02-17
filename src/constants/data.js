@@ -14,7 +14,11 @@ export const data = [{
         images.glenelg_2,
         images.glenelg_3,
         images.glenelg_4
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '2',
     title: 'SA Museum',
@@ -29,7 +33,11 @@ export const data = [{
         images.glenelg_2,
         images.glenelg_3,
         images.glenelg_4
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '3',
     title: 'Mount Lofty',
@@ -44,7 +52,11 @@ export const data = [{
         images.glenelg_2,
         images.glenelg_3,
         images.glenelg_4
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '4',
     title: 'Burnside Village',
@@ -59,7 +71,11 @@ export const data = [{
         images.glenelg_2,
         images.glenelg_3,
         images.glenelg_4
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '5',
     title: 'Henley Beach',
@@ -74,7 +90,11 @@ export const data = [{
         images.henley_beach2,
         images.henley_beach3,
         images.henley_beach4
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '6',
     title: 'Moana',
@@ -83,13 +103,16 @@ export const data = [{
     travelMethod: ['car'],
     mainAttractions: ['Deep Blue Cafe'],
     TourDays: 1,
-    image: images.glenelg_1,
+    image: images.moana1,
     images: [
-        images.glenelg_1,
-        images.glenelg_2,
-        images.glenelg_3,
-        images.glenelg_4
-    ]
+        images.moana1,
+        images.moana2,
+        images.moana3,
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '7',
     title: 'Christies Beach',
@@ -104,7 +127,11 @@ export const data = [{
         images.christies_beach2,
         images.christies_beach3,
         images.christies_beach4
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '8',
     title: 'Normanville',
@@ -113,13 +140,16 @@ export const data = [{
     travelMethod: ['car'],
     mainAttractions: ['South Shores Villa'],
     TourDays: 1,
-    image: images.glenelg_1,
+    image: images.normanville1,
     images: [
-        images.glenelg_1,
-        images.glenelg_2,
-        images.glenelg_3,
-        images.glenelg_4
-    ]
+        images.normanville1,
+        images.normanville2,
+        images.normanville3,
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '9',
     title: 'Middleton',
@@ -133,7 +163,11 @@ export const data = [{
         images.middleton1,
         images.middleton2,
         images.middleton3
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },{
     key: '10',
     title: 'West Beach',
@@ -148,5 +182,9 @@ export const data = [{
         images.glenelg_2,
         images.glenelg_3,
         images.glenelg_4
-    ]
+    ],
+    location: {
+        latitude: -34.9820,
+        longitude: 138.5160
+    }
 },];

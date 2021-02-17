@@ -17,22 +17,30 @@ const firebaseConfig = {
   appId: '1:1028854562585:web:70e6731c085981ba92cf88',
 };
 
-firebase.initializeApp(firebaseConfig);
+let app ;
 
-const storageRef = firebase.storage().ref("locations/glenelg") ;
+if (firebase.apps.length === 0) {
+  app = firebase.initializeApp(firebaseConfig);
+} else {
+  app = firebase.app() ;
+}
 
-const storage = [] ;
 
-storageRef.listAll().then(async function(result) {
-  result.items.forEach(async function(item) {
-    const url = await item.getDownloadURL().then((url) => {
-        storage.push(url) ;
-        // console.log(storage) ;
-    }) ;
-  })
-})
 
-const db = firebase.firestore();
+// const storageRef = firebase.storage().ref("locations/glenelg") ;
+
+// const storage = [] ;
+
+// storageRef.listAll().then(async function(result) {
+//   result.items.forEach(async function(item) {
+//     const url = await item.getDownloadURL().then((url) => {
+//         storage.push(url) ;
+//         // console.log(storage) ;
+//     }) ;
+//   })
+// })
+
+// const db = firebase.firestore();
 
 // firestore()
 //   .collection('locations')
@@ -45,38 +53,36 @@ const db = firebase.firestore();
 //     });
 //   });
 
-export const locationsRef = db.collection("locations");
+// export const locationsRef = db.collection("locations");
 
-function storeHighScore(userId, score) {
-  firebase
-    .database()
-    .ref('users/' + userId)
-    .set({
-      highscore: score,
-    });
+// function storeHighScore(userId, score) {
+//   firebase
+//     .database()
+//     .ref('users/' + userId)
+//     .set({
+//       highscore: score,
+//     });
 
-    console.log("Stored score.");
-}
+//     console.log("Stored score.");
+// }
 
-export function listFiles(reference, pageToken) {
-  const arr = [];
-  reference.list({ pageToken }).then(result => {
-    // Loop over each item
-    result.items.forEach(ref => {
-      firebase.storage().ref(ref.fullPath).getDownloadURL().then(
-        function(url)
-        {
-          console.log('Path is: '+ref.fullPath);
-          console.log('Download is: '+url);
-          arr.push(url);
-        });
-    });
+// export function listFiles(reference, pageToken) {
+//   const arr = [];
+//   reference.list({ pageToken }).then(result => {
+//     // Loop over each item
+//     result.items.forEach(ref => {
+//       firebase.storage().ref(ref.fullPath).getDownloadURL().then(
+//         function(url)
+//         {
+//           console.log('Path is: '+ref.fullPath);
+//           console.log('Download is: '+url);
+//           arr.push(url);
+//         });
+//     });
 
-    if (result.nextPageToken) {
-      return listFilesAndDirectories(reference, result.nextPageToken);
-    }
-    return Promise.resolve();
-  });
-
-  return arr;
-}
+//     if (result.nextPageToken) {
+//       return listFilesAndDirectories(reference, result.nextPageToken);
+//     }
+//     return Promise.resolve();
+//   });
+// }

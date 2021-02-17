@@ -93,6 +93,7 @@ const IconLabel = ({ icon, label }) => {
 export const DestinationDetail = ({ route, navigation }) => {
     // Render
     const { item } = route.params ;
+    console.log(item.location.latitude) ;
     return (
         <View style={styles.container}>
 
@@ -215,7 +216,7 @@ export const DestinationDetail = ({ route, navigation }) => {
                 <View style={{ marginTop: SIZES.padding, paddingHorizontal: SIZES.padding }}>
                     <Text style={{fontWeight: 'bold'}}>Travel</Text>
                 </View>
-                <Map />
+                <Map latitude={item.location.latitude} longitude={item.location.longitude}/>
             </ScrollView>
             </View>
         </View>

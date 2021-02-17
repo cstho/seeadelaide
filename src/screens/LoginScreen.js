@@ -1,45 +1,70 @@
-import React from 'react';
-import { Text, View, TextInput, TouchableOpacity } from 'react-native';
-import styles from '../styles/screens.style.js';
+import React, {useState, useEffect} from 'react' ;
+import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native' ;
+import { Button, Input, Image } from 'react-native-elements' ;
+import { StatusBar } from 'expo-status-bar' ;
+import * as firebase from 'firebase' ;
 import * as SignIn from '../components/GoogleSignIn.js';
-import Register from '../components/Register.js';
-import { useNavigation } from '@react-navigation/native';
 
-export default class LoginScreen extends React.Component{
-  state={
-    email:"",
-    password:""
-  }
-  navigation = useNavigation() ;
-  render() {
-      return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={styles.logo}>SeeAdelaide</Text>
-          <View style={styles.inputView}>
-              <TextInput
-                  style={styles.inputText}
-                  placeholder="Email..."
-                  placeholderTextColor="#003f5c"
-                  onChangeText={text => this.setState({ email: text })} />
-          </View>
-          <View style={styles.inputView}>
-              <TextInput
-                  secureTextEntry
-                  style={styles.inputText}
-                  placeholder="Password..."
-                  placeholderTextColor="#003f5c"
-                  onChangeText={text => this.setState({ password: text })} />
-          </View>
-          <TouchableOpacity>
-              <Text style={styles.forgot}>Forgot Password?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.loginBtn} onPress={() => SignIn.googleSignIn()}>
-              <Text style={styles.loginText}>LOGIN</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => {navigation.navigate('Register')}}>
-              <Text style={styles.loginText}>Signup</Text>
-          </TouchableOpacity>
-      </View>
-      );
-  };
+const LoginScreen = ({ navigation }) => {
+    const [email, setEmail] = useState("") ;
+    const [password, setPassword] = useState("") ;
+
+    const signIn = () => {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((result) => {
+                console.log(result)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    const signUp = () => {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((result) => {
+                firebase.firestore().collection("users")
+                    .doc(firebase.auth().currentUser.uid)
+                    .set({
+                        email
+                    })
+                console.log(result)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    return (
+        <KeyboardAvoidingView 
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style = {{flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor:'white'}} >
+            <Image
+                source={require('../images/onboarding_image.jpg')}
+                style = {{width: 250, height: 250}}
+            />
+            <Input 
+                placeholder="Email" 
+                type="email" 
+                value={email}
+                containerStyle = {{width: 300}}
+                onChangeText={(text) => setEmail(text)}
+            />
+            <Input 
+                placeholder="Password" 
+                secureTextEntry 
+                type="password" 
+                value={password}
+                containerStyle = {{width: 300}}
+                onChangeText={(text) => setPassword(text)}
+            />
+            
+            <Button containerStyle={{width: 250}} onPress={signIn} title="Login" />
+            <Button containerStyle={{width: 250}} onPress={signUp} type="outline" title="Register" />
+            <Button containerStyle={{width: 250, marginTop: 20, marginBottom: 10}} onPress={() => SignIn.googleSignIn()} type="outline" title="Sign in with Google" />
+
+            <View style={{height: 100}} />
+        </KeyboardAvoidingView>
+    )
 }
+
+export default LoginScreen ;
