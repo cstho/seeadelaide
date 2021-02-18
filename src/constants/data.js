@@ -35,8 +35,8 @@ export const data = [{
         images.glenelg_4
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -34.9205,
+        longitude: 138.6032
     }
 },{
     key: '3',
@@ -54,8 +54,8 @@ export const data = [{
         images.glenelg_4
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -34.9736,
+        longitude: 138.7086
     }
 },{
     key: '4',
@@ -73,8 +73,8 @@ export const data = [{
         images.glenelg_4
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -34.9411,
+        longitude: 138.6414
     }
 },{
     key: '5',
@@ -92,8 +92,8 @@ export const data = [{
         images.henley_beach4
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -34.9200,
+        longitude: 138.4940
     }
 },{
     key: '6',
@@ -110,8 +110,8 @@ export const data = [{
         images.moana3,
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -35.1980,
+        longitude: 138.4730
     }
 },{
     key: '7',
@@ -129,8 +129,8 @@ export const data = [{
         images.christies_beach4
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -35.1350,
+        longitude: 138.4770
     }
 },{
     key: '8',
@@ -147,8 +147,8 @@ export const data = [{
         images.normanville3,
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -35.4464,
+        longitude: 138.3216
     }
 },{
     key: '9',
@@ -165,8 +165,8 @@ export const data = [{
         images.middleton3
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -35.5115,
+        longitude: 138.7186
     }
 },{
     key: '10',
@@ -184,7 +184,7 @@ export const data = [{
         images.glenelg_4
     ],
     location: {
-        latitude: -34.9820,
-        longitude: 138.5160
+        latitude: -34.9453,
+        longitude: 138.5038
     }
 },];
