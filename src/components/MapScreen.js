@@ -29,44 +29,44 @@ export default class MapScreen extends Component {
     markers: [
       {
         coordinate: {
-          latitude: 45.524548,
-          longitude: -122.6749817,
+          latitude: -34.9820,
+          longitude: 138.5160,
         },
         title: "Glenelg",
-        address: "25km",
+        address: "12km",
         image: Images[0],
       },
       {
         coordinate: {
-          latitude: 45.524698,
-          longitude: -122.6655507,
+          latitude: -34.9205,
+          longitude: 138.6032,
         },
         title: "SA Musuem",
-        address: "Musuem",
+        address: "2km",
         image: Images[1],
       },
       {
         coordinate: {
-          latitude: 45.5230786,
-          longitude: -122.6701034,
+          latitude: -34.9411,
+          longitude: 138.6414,
         },
         title: "Burnside Village",
-        address: "This is the third best place in Portland",
+        address: "5km",
         image: Images[2],
       },
       {
         coordinate: {
-          latitude: 45.521016,
-          longitude: -122.6561917,
+          latitude: -34.9736,
+          longitude: 138.7086,
         },
         title: "Mount Lofty",
-        address: "This is the fourth best place in Portland",
+        address: "40km",
         image: Images[3],
       },
     ],
     region: {
-      latitude: 37,
-      longitude: -122.6653281029795,
+      latitude: -34.9205,
+      longitude: 138.6032,
       latitudeDelta: 0.0922,
       longitudeDelta: 0.040142817690068,
     },

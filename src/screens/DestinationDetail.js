@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useRef, } from 'react';
 import {
     StyleSheet,
     View,
@@ -9,11 +9,14 @@ import {
     ScrollView
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { SliderBox } from "react-native-image-slider-box";
+import SliderBox from "react-native-image-slider-box";
 import { images, icons, COLORS, SIZES } from '../constants';
 import Map from '../components/Map';
 import ReactNativeParallaxHeader from 'react-native-parallax-header';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Animated from 'react-native-reanimated';
+
+const BANNER_H = 350 ;
 
 const StarReview = ({ rate }) => {
     var starComponents = [];
@@ -92,59 +95,25 @@ const IconLabel = ({ icon, label }) => {
 
 export const DestinationDetail = ({ route, navigation }) => {
     // Render
+    const scrollA = useRef(new Animated.Value(0)).current ;
     const { item } = route.params ;
-    console.log(item.location.latitude) ;
     return (
         <View style={styles.container}>
-
+            <Animated.ScrollView
+                horizontal={false}
+                showsVerticalScrollIndicator={false}
+                onScroll={Animated.event(
+                    [{nativeEvent: {contentOffset: {y: scrollA}}}],
+                    {useNativeDriver: true}
+                )}
+                scrollEventThrottle={16}
+            >
             <View style={{ flex: 2 }}>
-                <SliderBox
-                    images={item.images}
-                    // resizeMode="cover"
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                    }} 
+                <Animated.Image
+                    // images={item.images}
+                    source={item.images[0]}
+                    style={styles.banner(scrollA)} 
                 />
-                {/* <View
-                    style={[{
-                        position: 'absolute',
-                        bottom: "5%",
-                        left: "5%",
-                        right: "5%",
-                        borderRadius: 15,
-                        padding: SIZES.padding,
-                        backgroundColor: COLORS.white
-                    }, styles.shadow]}
-                >
-                    <View style={{ flexDirection: 'row' }}>
-                        <View style={styles.shadow}>
-                            <Image
-                                source={images.glenelg_1}
-                                resizeMode="cover"
-                                style={{
-                                    width: 70,
-                                    height: 70,
-                                    borderRadius: 15,
-                                }} />
-                        </View>
-
-                        <View style={{ marginHorizontal: SIZES.radius, justifyContent: 'space-around' }}>
-                            <Text>{route.params.item.title}</Text>
-                            <Text style={{ color: 'black'}}>{route.params.item.key}</Text>
-
-                            <StarReview
-                                rate={4.5} />
-                        </View>
-                    </View>
-
-                    <View style={{ marginTop: SIZES.radius }}>
-                        <Text style={{ color: COLORS.gray }}>
-                            Enjoy the luxurious white sand and have a drink right on the beach!
-                        </Text>
-                    </View>
-                </View> */}
-
                 <MaterialCommunityIcons
                         name="arrow-left-circle"
                         color={'white'}
@@ -177,9 +146,7 @@ export const DestinationDetail = ({ route, navigation }) => {
             </View>
 
         <View style={{ flex: 1.5, marginTop: 20 }}>
-            <ScrollView
-              horizontal={false}
-              showsVerticalScrollIndicator={false}>
+            <Map latitude={item.location.latitude} longitude={item.location.longitude}/>
                 <View style={{ flexDirection: 'row', marginTop: SIZES.base, paddingHorizontal: SIZES.padding * 2, justifyContent: 'space-between' }}>
                     <IconLabel
                         icon={icons.swimming}
@@ -193,8 +160,6 @@ export const DestinationDetail = ({ route, navigation }) => {
                         icon={icons.dollar}
                         label="Free" />
                 </View>
-
-
                 <View style={{ marginTop: SIZES.padding, paddingHorizontal: SIZES.padding }}>
                     <Text style={{fontWeight: 'bold'}}>About</Text>
                     <Text style={{ marginTop: SIZES.radius, color: COLORS.black }}>
@@ -216,9 +181,8 @@ export const DestinationDetail = ({ route, navigation }) => {
                 <View style={{ marginTop: SIZES.padding, paddingHorizontal: SIZES.padding }}>
                     <Text style={{fontWeight: 'bold'}}>Travel</Text>
                 </View>
-                <Map latitude={item.location.latitude} longitude={item.location.longitude}/>
-            </ScrollView>
             </View>
+            </Animated.ScrollView>
         </View>
     );
 }
@@ -238,7 +202,22 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
 
         elevation: 5,
-    }
+    },
+    banner: scrollA => ({
+        height: BANNER_H,
+        width: '100%',
+        transform: [
+            {
+                translateY: scrollA,
+            },            
+            {
+                scale: scrollA.interpolate({
+                    inputRange: [-BANNER_H, 0],
+                    outputRange: [2, 1]
+                })
+            },
+        ],
+    })
 });
 
 export default DestinationDetail;
