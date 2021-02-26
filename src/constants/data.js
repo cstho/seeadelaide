@@ -187,4 +187,23 @@ export const data = [{
         latitude: -34.9453,
         longitude: 138.5038
     }
+},{
+    key: '11',
+    title: 'Botanic Garden',
+    summary: 'In the heart of the city but another world away … Take time out to explore the beauty and diversity of plants from across Australia and around the world. Spend an hour or spend the day among the 50 hectares of magnificently maintained gardens and stunning architecture. Relax in the shade or enjoy a coffee among some of Australia’s finest plant collections.',
+    cost: 'Free',
+    travelMethod: ['car', 'tram'],
+    mainAttractions: ['Bicentennial Conservatory, Palm House, Amazon Waterlily Pavilion, Santos Musuem of Economic Botany'],
+    TourDays: 1,
+    image: images.glenelg_1,
+    images: [
+        images.glenelg_1,
+        images.glenelg_2,
+        images.glenelg_3,
+        images.glenelg_4
+    ],
+    location: {
+        latitude: -34.9181,
+        longitude: 138.6107
+    }
 },];

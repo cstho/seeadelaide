@@ -46,9 +46,9 @@ export function MyTabs() {
         name="Saved"
         component={Saved}
         options={{
-          tabBarLabel: 'Saved',
+          tabBarLabel: 'Search',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="heart" color={color} size={26} />
+            <MaterialCommunityIcons name="magnify" color={color} size={26} />
           ),
         }}
       />
