@@ -22,17 +22,17 @@ export const data = [{
 },{
     key: '2',
     title: 'SA Museum',
-    summary: 'Situated 20 minutes west of the city and accessible by tram. Glenelg offers a range of exciting activities, such as beach volleyball, swimming, walking trails, bike hire, reserves and many other fun activities',
-    cost: 'Free',
+    summary: '',
+    cost: 'Free entry, charge for certain exhibits (Unknown)',
     travelMethod: ['car', 'bus', 'tram'],
-    mainAttractions: ['Jetty Rd'],
+    mainAttractions: ['Yuendumu Doors,  Pacific Cultures, Megafauna, Opalised Fossils, Polar, Ediacaran, Minerals and the Ancient Egyptian Room'],
     TourDays: 1,
     image: images.sa_museum,
     images: [
         images.sa_museum,
-        images.glenelg_2,
-        images.glenelg_3,
-        images.glenelg_4
+        images.sa_museum_1,
+        images.sa_museum_2,
+        images.sa_museum_3,
     ],
     location: {
         latitude: -34.9205,
@@ -41,17 +41,17 @@ export const data = [{
 },{
     key: '3',
     title: 'Mount Lofty',
-    summary: 'Situated 20 minutes west of the city and accessible by tram. Glenelg offers a range of exciting activities, such as beach volleyball, swimming, walking trails, bike hire, reserves and many other fun activities',
-    cost: 'Free',
+    summary: 'Mount Lofty Summit is the peak of the Mount Lofty Ranges in the Adelaide Hills. It is a must-see place to visit if you just moved to Adelaide, as it provides gorgeous scenery of the Adelaide metropolitan area. Be sure to walk the Heysen Trail or walk down to Waterfall Gully when planning a trip there.',
+    cost: 'Free entry',
     travelMethod: ['car', 'bus', 'tram'],
-    mainAttractions: ['Jetty Rd'],
+    mainAttractions: ["Heysen Trail, Waterall Gully"],
     TourDays: 2,
     image: images.mount_lofty,
     images: [
         images.mount_lofty,
-        images.glenelg_2,
-        images.glenelg_3,
-        images.glenelg_4
+        images.mount_lofty_1,
+        images.mount_lofty_2,
+        images.mount_lofty_3,
     ],
     location: {
         latitude: -34.9736,

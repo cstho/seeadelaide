@@ -22,7 +22,13 @@ export const normanville2 = require("../images/normanville2.jpg");
 export const normanville3 = require("../images/normanville3.jpeg");
 export const burnside_village = require("../images/burnside_village.jpg");
 export const mount_lofty = require("../images/mount_lofty.jpg");
+export const mount_lofty_1 = require("../images/mount_lofty_1.jpg");
+export const mount_lofty_2 = require("../images/mount_lofty_2.jpg");
+export const mount_lofty_3 = require("../images/mount_lofty_3.jpg");
 export const sa_museum = require("../images/sa_museum.jpg");
+export const sa_museum_1 = require("../images/sa_museum_1.jpg");
+export const sa_museum_2 = require("../images/sa_museum_2.jpg");
+export const sa_museum_3 = require("../images/sa_museum_3.jpg");
 export const climbingHills = require("../images/climbing_hills.jpg");
 export const frozenHills = require("../images/frozen_hills.jpg");
 export const homeBanner = require("../images/home_banner.jpg");
@@ -55,7 +61,13 @@ export default {
     normanville3,
     burnside_village,
     mount_lofty,
+    mount_lofty_1,
+    mount_lofty_2,
+    mount_lofty_3,
     sa_museum,
+    sa_museum_1,
+    sa_museum_2,
+    sa_museum_3,
     climbingHills,
     frozenHills,
     homeBanner,
