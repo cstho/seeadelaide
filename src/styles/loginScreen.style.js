@@ -46,8 +46,9 @@ export default StyleSheet.create({
     },
     searchbar: {
       elevation: 0, // This is for Android
-      backgroundColor: '#EBF2F5',
-      marginTop: 30,
+      backgroundColor: '#e7e7e7',
+      marginTop: 20,
+      marginBottom: 0,
       padding: 10,
       alignSelf: 'center',
       borderWidth: 0, // Remove Border

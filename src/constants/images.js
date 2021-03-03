@@ -35,6 +35,9 @@ export const homeBanner = require("../images/home_banner.jpg");
 export const onboardingImage = require("../images/onboarding_image.jpg");
 export const skiVilla = require("../images/ski_villa.jpg");
 export const skiVillaBanner = require("../images/ski_villa_banner.jpg");
+export const catBeach = require("../images/catBeach.jpg");
+export const catFood = require("../images/catFood.jpg");
+export const catPicnic = require("../images/catPicnic.jpg");
 
 export default {
     beach,
@@ -74,4 +77,7 @@ export default {
     onboardingImage,
     skiVilla,
     skiVillaBanner,
+    catBeach,
+    catFood,
+    catPicnic
 }

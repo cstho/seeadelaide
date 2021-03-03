@@ -18,7 +18,7 @@ export default class Search extends React.Component {
         <SearchBar
           searchIcon = { true }
           containerStyle = { styles.searchbar }
-          inputContainerStyle = {{ width: '100%', backgroundColor: '#DDE8EE', borderRadius: 25 }}
+          inputContainerStyle = {{ width: '100%', backgroundColor: 'white', borderRadius: 20 }}
           clearButtonMode = 'while-editing'
           round = { true }
           lightTheme = { true }
