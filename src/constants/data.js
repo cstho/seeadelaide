@@ -195,15 +195,50 @@ export const data = [{
     travelMethod: ['car', 'tram'],
     mainAttractions: ['Bicentennial Conservatory, Palm House, Amazon Waterlily Pavilion, Santos Musuem of Economic Botany'],
     TourDays: 1,
-    image: images.glenelg_1,
+    image: images.botanic2,
     images: [
-        images.glenelg_1,
-        images.glenelg_2,
-        images.glenelg_3,
-        images.glenelg_4
+        images.botanic2,
+        images.botanic3,
+        images.botanic4,
     ],
     location: {
         latitude: -34.9181,
         longitude: 138.6107
+    }
+},{
+    key: '12',
+    title: 'Adelaide Central Market',
+    summary: 'The Adelaide Central Market is one of the largest undercover fresh produce markets in the Southern Hemisphere, with 1 million kilograms of fresh produce delivered to the Market and sold every month.',
+    cost: 'Free',
+    travelMethod: ['car', 'tram'],
+    mainAttractions: ['Chinatown, shops'],
+    TourDays: 1,
+    image: images.central1,
+    images: [
+        images.central1,
+        images.central2,
+        images.central3,
+    ],
+    location: {
+        latitude: -34.9295,
+        longitude: 138.5973
+    }
+},{
+    key: '13',
+    title: 'Adelaide Oval',
+    summary: 'Adelaide Oval is a sports ground in Adelaide, South Australia, located in the parklands between the city centre and North Adelaide',
+    cost: 'Depends on the event',
+    travelMethod: ['car', 'tram'],
+    mainAttractions: [],
+    TourDays: 1,
+    image: images.oval1,
+    images: [
+        images.oval1,
+        images.oval2,
+        images.oval3,
+    ],
+    location: {
+        latitude: -34.9155,
+        longitude: 138.5961
     }
 },];

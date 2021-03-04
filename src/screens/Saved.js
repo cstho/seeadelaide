@@ -7,7 +7,7 @@ import { images } from '../constants/' ;
 import { Tile } from 'react-native-elements';
 import { SIZES, COLORS } from '../constants/theme';
 
-export const Saved = () => {
+const Categories = () => {
   const categories = [
     {
       key: '1',
@@ -60,3 +60,5 @@ export const Saved = () => {
       </SafeAreaView>
     )
 }
+
+export default Categories ;

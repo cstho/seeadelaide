@@ -29,6 +29,15 @@ export const sa_museum = require("../images/sa_museum.jpg");
 export const sa_museum_1 = require("../images/sa_museum_1.jpg");
 export const sa_museum_2 = require("../images/sa_museum_2.jpg");
 export const sa_museum_3 = require("../images/sa_museum_3.jpg");
+export const botanic2 = require("../images/botanic2.jpg");
+export const botanic3 = require("../images/botanic3.jpg");
+export const botanic4 = require("../images/botanic4.jpg");
+export const central1 = require("../images/central1.jpg");
+export const central2 = require("../images/central2.jpg");
+export const central3 = require("../images/central3.jpg");
+export const oval1 = require("../images/oval1.jpg");
+export const oval2 = require("../images/oval2.jpg");
+export const oval3 = require("../images/oval3.jpg");
 export const climbingHills = require("../images/climbing_hills.jpg");
 export const frozenHills = require("../images/frozen_hills.jpg");
 export const homeBanner = require("../images/home_banner.jpg");
@@ -71,6 +80,15 @@ export default {
     sa_museum_1,
     sa_museum_2,
     sa_museum_3,
+    botanic2,
+    botanic3,
+    botanic4,
+    central1,
+    central2,
+    central3,
+    oval1,
+    oval2,
+    oval3,
     climbingHills,
     frozenHills,
     homeBanner,

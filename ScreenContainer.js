@@ -4,7 +4,7 @@ import styles from './src/styles/screens.style';
 import LoginScreen from './src/screens/LoginScreen';
 import HomeNav from './src/navigations/HomeNav';
 import LoginScrNav from './src/navigations/LoginScrNav' ;
-import { Saved } from './src/screens/Saved';
+import Categories from './src/screens/Saved';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
@@ -43,8 +43,8 @@ export function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Saved"
-        component={Saved}
+        name="Categories"
+        component={Categories}
         options={{
           tabBarLabel: 'Search',
           tabBarIcon: ({ color }) => (
